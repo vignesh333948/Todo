@@ -28,7 +28,7 @@
     width: 30px;
     margin-left: 10px;
 }
-.row{
+/* .row{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,7 +36,59 @@
     border-radius: 30px;
     padding-left: 20px;
     margin-bottom: 25px;
+} */
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    width: 100%;  /* Ensure it doesn't exceed container */
+    overflow: hidden;  /* Prevent overflow */
 }
+
+/* Ensure input takes most of the space */
+.row input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 14px;
+    min-width: 0;  /* Prevents input from shrinking weirdly */
+}
+
+/* Button styles */
+.row button {
+    border: none;
+    outline: none;
+    padding: 14px 30px; /* Adjust padding */
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+/* ✅ Media Query for Small Screens */
+@media (max-width: 480px) {
+    .row {
+        flex-direction: row;  /* Keep elements in a row */
+        padding-left: 10px; /* Adjust padding */
+    }
+    .row input {
+        font-size: 12px; /* Adjust font size */
+        padding: 10px;
+    }
+    .row button {
+        padding: 12px 20px; /* Reduce button size */
+        font-size: 14px;
+    }
+}
+
 input{
     flex: 1;
     border: none;
